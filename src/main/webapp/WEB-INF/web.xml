@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	     xmlns="http://java.sun.com/xml/ns/javaee"
+                 xmlns:web="http://java.sun.com/xml/ns/javaee"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+                                                     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+                                                     id="WebApp_ID" version="2.5">                                               
+ 	 	<servlet>
+   			<description></description>
+  			 <display-name>Test</display-name>
+   			<servlet-name>Test</servlet-name>
+   			<servlet-class>com.test.service.Test</servlet-class>
+ 		</servlet>
+ 		<servlet-mapping>
+   			<servlet-name>Test</servlet-name>
+   			<url-pattern>/test</url-pattern>
+ 		</servlet-mapping>        
+ 		
+ 		
+ 	   <servlet>
+			 <servlet-name>webtest</servlet-name>
+			 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+			 <init-param>
+			     <param-name>com.sun.jersey.config.property.packages</param-name>
+			     <param-value>com.test.service</param-value>
+			 </init-param>
+			 <load-on-startup>1</load-on-startup>
+	   </servlet>
+	   <servlet-mapping>
+			  <servlet-name>webtest</servlet-name>
+			  <url-pattern>/webtest/*</url-pattern>
+		</servlet-mapping>                                             
+</web-app>
